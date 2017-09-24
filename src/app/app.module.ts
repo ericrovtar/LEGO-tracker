@@ -8,6 +8,8 @@ import { ProfilePage } from '../pages/profile/profile';
 import { SetsPage } from '../pages/sets/sets';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { ViewLayoutPopover } from '../pages/_parts/popovers/viewLayout/viewLayout';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -18,6 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProfilePage,
     SetsPage,
     TabsPage,
+    ViewLayoutPopover,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProfilePage,
     SetsPage,
     TabsPage,
+    ViewLayoutPopover,
   ],
   providers: [
     StatusBar,

@@ -2,5 +2,7 @@
   "name": "lego-tracker",
   "app_id": "6fce1fd7",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
