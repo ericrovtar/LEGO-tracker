@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { MinifigsPage } from '../minifigs/minifigs';
 import { ProfilePage } from '../profile/profile';
+import { SearchPage } from '../search/search'
 import { SetsPage } from '../sets/sets';
 
 @Component({
@@ -11,7 +12,8 @@ export class TabsPage {
 
   tab1Root = SetsPage;
   tab2Root = MinifigsPage;
-  tab3Root = ProfilePage;
+  tab3Root = SearchPage;
+  tab4Root = ProfilePage;
 
   constructor() {
 

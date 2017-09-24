@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { MinifigsPage } from '../pages/minifigs/minifigs';
 import { ProfilePage } from '../pages/profile/profile';
+import { SearchPage } from '../pages/search/search';
 import { SetsPage } from '../pages/sets/sets';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -18,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     MinifigsPage,
     ProfilePage,
+    SearchPage,
     SetsPage,
     TabsPage,
     ViewLayoutPopover,
@@ -31,6 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     MinifigsPage,
     ProfilePage,
+    SearchPage,
     SetsPage,
     TabsPage,
     ViewLayoutPopover,
