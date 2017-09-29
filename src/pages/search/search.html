@@ -1,9 +1,26 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Profile</ion-title>
+        <ion-title>Search</ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only (click)="scanBarcode()">
+                <ion-icon name="barcode" ios="ios-barcode-outline"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h2>Profile</h2>
+    <h2>Search</h2>
+
+    <div><b>Barcode Data</b></div>
+    <div>
+        {{ data }}
+    </div>
+    <br>
+    <br>
+    <div><b>Error</b></div>
+    <div>
+        {{ error }}
+    </div>
 </ion-content>
