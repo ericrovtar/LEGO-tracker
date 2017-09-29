@@ -9,6 +9,9 @@ import { SearchPage } from '../pages/search/search';
 import { SetsPage } from '../pages/sets/sets';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { SetService } from '../app/set/set.service';
+import { ThemeService } from '../app/theme/theme.service';
+
 import { ViewLayoutPopover } from '../pages/_parts/popovers/viewLayout/viewLayout';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -40,6 +43,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ViewLayoutPopover,
   ],
   providers: [
+    SetService,
+    ThemeService,
+
     BarcodeScanner,
     StatusBar,
     SplashScreen,
