@@ -1,5 +1,11 @@
 <ion-header>
     <ion-navbar>
+        <ion-buttons start>
+            <button *ngIf="selectedTheme" ion-button icon-only (click)="back()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+
         <ion-title>Sets</ion-title>
 
         <ion-buttons end>
@@ -11,18 +17,46 @@
 </ion-header>
 
 <ion-content padding>
-    <h2>Sets</h2>
+    <ng-container *ngIf="!selectedTheme">
+        <h2>Themes</h2>
+        
+        <ion-list>
+            <ion-item *ngFor="let theme of themes" (click)="selectTheme(theme)">
+                <ion-thumbnail item-start>
+                    <img [src]="theme.logoUrl">
+                </ion-thumbnail>
+                <h2>{{ theme.name }}</h2>
+                <p>{{ theme.startDate }} - {{ theme.endDate }}</p>
 
-    <ion-list>
-        <ion-item *ngFor="let set of sets">
-            <ion-thumbnail item-start>
-                <img [src]="set.theme.logoUrl">
-            </ion-thumbnail>
-            <h2>{{ set.theme.name }}</h2>
-            <p>{{ set.number }} • {{ set.name }}</p>
-            <button ion-button clear item-end>View</button>
-        </ion-item>
-    </ion-list>
+                <button ion-button icon-only clear item-end 
+                    (click)="toggleFavorite($event, theme)"
+                    class="favorite">
+                    <ng-container *ngIf="isFavorite(theme); then favorite else unfavorite"></ng-container>
+                    <ng-template #favorite>
+                        <ion-icon name="star"></ion-icon>
+                    </ng-template>
+                    <ng-template #unfavorite>
+                        <ion-icon name="star-outline"></ion-icon>
+                    </ng-template>
+                </button>
+            </ion-item>
+        </ion-list>
+    </ng-container>
+        
+    <ng-container *ngIf="selectedTheme">            
+        <h2>Sets</h2>
+
+        <ion-list>
+            <ion-item *ngFor="let set of sets">
+                <ion-thumbnail item-start>
+                    <img [src]="set.theme.logoUrl">
+                </ion-thumbnail>
+                <h2>{{ set.theme.name }}</h2>
+                <p>{{ set.number }} • {{ set.name }}</p>
+                <button ion-button clear item-end>View</button>
+            </ion-item>
+        </ion-list>
+    </ng-container>
 
     <div>
         <!-- Lego Head icon by Icons8 -->
