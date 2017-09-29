@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { ViewLayoutPopover } from '../pages/_parts/popovers/viewLayout/viewLayout';
 
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -39,6 +40,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ViewLayoutPopover,
   ],
   providers: [
+    BarcodeScanner,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
