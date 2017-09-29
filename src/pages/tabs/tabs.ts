@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-import { MinifigsPage } from '../minifigs/minifigs';
-import { ProfilePage } from '../profile/profile';
-import { SearchPage } from '../search/search'
-import { SetsPage } from '../sets/sets';
+import { MinifigsPage } from '../minifigs/minifigs.page';
+import { ProfilePage } from '../profile/profile.page';
+import { SearchPage } from '../search/search.page'
+import { SetsPage } from '../sets/sets.page';
 
 @Component({
   templateUrl: 'tabs.html'

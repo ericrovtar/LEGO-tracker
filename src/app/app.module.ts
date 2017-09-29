@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { MinifigsPage } from '../pages/minifigs/minifigs';
-import { ProfilePage } from '../pages/profile/profile';
-import { SearchPage } from '../pages/search/search';
-import { SetsPage } from '../pages/sets/sets';
+import { MinifigsPage } from '../pages/minifigs/minifigs.page';
+import { ProfilePage } from '../pages/profile/profile.page';
+import { SearchPage } from '../pages/search/search.page';
+import { SetsPage } from '../pages/sets/sets.page';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { SetService } from '../app/set/set.service';

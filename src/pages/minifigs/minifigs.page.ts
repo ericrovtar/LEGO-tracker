@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-    selector: 'page-profile',
-    templateUrl: 'profile.html',
+    selector: 'page-minifigs',
+    templateUrl: 'minifigs.page.html',
     // styleUrls: [ './minifigs.scss' ]
 })
-export class ProfilePage {
+export class MinifigsPage {
     constructor(
         public navCtrl: NavController
     ) { }

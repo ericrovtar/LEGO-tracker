@@ -5,7 +5,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @Component({
     selector: 'page-search',
-    templateUrl: 'search.html',
+    templateUrl: 'search.page.html',
     // styleUrls: [ './minifigs.scss' ]
 })
 export class SearchPage {

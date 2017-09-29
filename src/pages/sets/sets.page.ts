@@ -8,7 +8,7 @@ import { SetService } from '../../app/set/set.service';
 
 @Component({
     selector: 'page-sets',
-    templateUrl: 'sets.html',
+    templateUrl: 'sets.page.html',
     // styleUrls: [ './sets.scss' ]
 })
 export class SetsPage {
