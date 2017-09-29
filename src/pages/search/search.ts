@@ -9,7 +9,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     // styleUrls: [ './minifigs.scss' ]
 })
 export class SearchPage {
-    data: any;
+    format: any;
+    text: any;
+    cancelled: any;
     error: any;
 
     constructor(
@@ -19,7 +21,9 @@ export class SearchPage {
 
     scanBarcode() {
         this.barcodeScanner.scan().then((barcodeData) => {
-            this.data = barcodeData;
+            this.format = barcodeData.format;
+            this.text = barcodeData.text;
+            this.cancelled = barcodeData.cancelled;
         }, (err) => {
             this.error = err;
         });
