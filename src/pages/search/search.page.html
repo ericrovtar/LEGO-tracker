@@ -1,38 +1,34 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>Search</ion-title>
+    <ion-toolbar>
+        <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)"></ion-searchbar>
 
         <ion-buttons end>
             <button ion-button icon-only (click)="scanBarcode()">
                 <ion-icon name="barcode" ios="ios-barcode-outline"></ion-icon>
             </button>
         </ion-buttons>
-    </ion-navbar>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)"></ion-searchbar>
+<ion-content padding>
+    <div><b>Barcode Data</b></div>
+    <div>
+        Format: {{ format }}<br><br>
+        Text: {{ text }}<br><br>
+        Cancelled: {{ cancelled }}<br><br>
+    </div>
+    <br>
+    <br>
+    <div><b>Error</b></div>
+    <div>
+        {{ error }}
+    </div>
+    
+    <br>
 
-    <ion-content padding>
-        <div><b>Barcode Data</b></div>
-        <div>
-            Format: {{ format }}<br><br>
-            Text: {{ text }}<br><br>
-            Cancelled: {{ cancelled }}<br><br>
-        </div>
-        <br>
-        <br>
-        <div><b>Error</b></div>
-        <div>
-            {{ error }}
-        </div>
-        
-        <br>
-
-        <ion-list>
-            <ion-item *ngFor="let item of items" (click)="selectItem(item)">
-                {{ item.name }}
-            </ion-item>
-        </ion-list>
-    </ion-content>
+    <ion-list>
+        <ion-item *ngFor="let item of items" (click)="selectItem(item)">
+            {{ item.name }}
+        </ion-item>
+    </ion-list>
 </ion-content>
