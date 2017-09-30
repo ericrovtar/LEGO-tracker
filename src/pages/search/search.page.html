@@ -10,19 +10,29 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <h2>Search</h2>
+<ion-content>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)"></ion-searchbar>
 
-    <div><b>Barcode Data</b></div>
-    <div>
-        Format: {{ format }}<br><br>
-        Text: {{ text }}<br><br>
-        Cancelled: {{ cancelled }}<br><br>
-    </div>
-    <br>
-    <br>
-    <div><b>Error</b></div>
-    <div>
-        {{ error }}
-    </div>
+    <ion-content padding>
+        <div><b>Barcode Data</b></div>
+        <div>
+            Format: {{ format }}<br><br>
+            Text: {{ text }}<br><br>
+            Cancelled: {{ cancelled }}<br><br>
+        </div>
+        <br>
+        <br>
+        <div><b>Error</b></div>
+        <div>
+            {{ error }}
+        </div>
+        
+        <br>
+
+        <ion-list>
+            <ion-item *ngFor="let item of items" (click)="selectItem(item)">
+                {{ item.name }}
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-content>

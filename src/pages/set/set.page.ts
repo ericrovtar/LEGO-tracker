@@ -4,6 +4,9 @@ import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { ViewLayoutPopover } from '../_parts/popovers/viewLayout/viewLayout';
 
 import { Set } from '../../app/set/set';
+import { Theme } from '../../app/theme/theme';
+
+import { SetsPage } from '../sets/sets.page';
 
 class keyPair {
     key: string;
@@ -46,5 +49,13 @@ export class SetPage {
         popover.present({
             ev: $event
         });
+    }
+
+    selectTheme(theme: Theme) {
+        if (theme) {
+            this.navCtrl.push(SetsPage, {
+                theme: theme
+            });
+        }
     }
 }
