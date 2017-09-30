@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Sets</ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+              <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>{{ set.name }}</h2>
+
+    <div>
+        <div>
+            <b>Theme</b>
+        </div>
+        <div>{{ set.theme?.name }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>Subtheme</b>
+        </div>
+        <div>{{ set.subtheme?.name }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>Number</b>
+        </div>
+        <div>{{ set.number }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>Name</b>
+        </div>
+        <div>{{ set.name }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>Description</b>
+        </div>
+        <div>{{ set.description }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>Minifigs</b>
+        </div>
+        <div>{{ set.minifigs }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>Release Date</b>
+        </div>
+        <div>{{ set.releaseDate }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>UPC</b>
+        </div>
+        <div>{{ set.upc }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>MSRP</b>
+        </div>
+        <div>{{ set.msrp }}</div>
+        <br>
+    </div>
+
+    <div>
+        <div>
+            <b>Pieces</b>
+        </div>
+        <div>{{ set.pieces }}</div>
+        <br>
+    </div>
+</ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, PopoverController } from 'ionic-angular';
+import { NavController, NavParams, PopoverController } from 'ionic-angular';
 
 import { ViewLayoutPopover } from '../_parts/popovers/viewLayout/viewLayout';
 
@@ -7,7 +7,8 @@ import { Set } from '../../app/set/set';
 import { SetService } from '../../app/set/set.service';
 
 import { Theme } from '../../app/theme/theme';
-import { ThemeService } from '../../app/theme/theme.service';
+
+import { SetPage } from '../set/set.page';
 
 @Component({
     selector: 'page-sets',
@@ -15,11 +16,7 @@ import { ThemeService } from '../../app/theme/theme.service';
     // styleUrls: [ './sets.scss' ]
 })
 export class SetsPage {
-    selectedTheme: Theme;
-
-    get themes(): Array<Theme> {
-        return this.themeService.themes;
-    }
+    private theme: Theme;
 
     get sets(): Array<Set> {
         return this.setService.sets;
@@ -27,10 +24,12 @@ export class SetsPage {
 
     constructor(
         public navCtrl: NavController,
+        public navParams: NavParams,
         public popoverCtrl: PopoverController,
-        private themeService: ThemeService,
         private setService: SetService
-    ) { }
+    ) { 
+        this.theme = this.navParams.get('theme');
+    }
 
     presentPopover($event) {
         let popover = this.popoverCtrl.create(ViewLayoutPopover);
@@ -38,23 +37,10 @@ export class SetsPage {
             ev: $event
         });
     }
-
-    selectTheme(theme: Theme) {
-        this.selectedTheme = theme;
-    }
-
-    back() {
-        this.selectedTheme = undefined;
-    }
-
-    toggleFavorite($event: TouchEvent, theme: Theme) {
-        $event.preventDefault();
-        $event.stopPropagation();
-
-       this.themeService.toggleFavorite(theme);
-    }
-
-    isFavorite(theme: Theme): boolean {
-        return this.themeService.favorites.indexOf(theme) > -1;
+    
+    selectSet(set: Set) {
+        this.navCtrl.push(SetPage, {
+            set: set
+        });
     }
 }

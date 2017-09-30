@@ -7,7 +7,9 @@ import { MinifigsPage } from '../pages/minifigs/minifigs.page';
 import { ProfilePage } from '../pages/profile/profile.page';
 import { SearchPage } from '../pages/search/search.page';
 import { SetsPage } from '../pages/sets/sets.page';
+import { SetPage } from '../pages/set/set.page';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ThemesPage } from '../pages/themes/themes.page';
 
 import { SetService } from '../app/set/set.service';
 import { ThemeService } from '../app/theme/theme.service';
@@ -24,8 +26,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MinifigsPage,
     ProfilePage,
     SearchPage,
+    SetPage,
     SetsPage,
     TabsPage,
+    ThemesPage,
     ViewLayoutPopover,
   ],
   imports: [
@@ -38,8 +42,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MinifigsPage,
     ProfilePage,
     SearchPage,
+    SetPage,
     SetsPage,
     TabsPage,
+    ThemesPage,    
     ViewLayoutPopover,
   ],
   providers: [
