@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { Set } from './set';
-import { Theme } from '../theme/theme';
+
+import { Sets } from '../../data/sets';
 
 @Injectable()
 export class SetService {
@@ -12,18 +13,9 @@ export class SetService {
     }
 
     constructor() {
-        const theme = new Theme('Star Wars');
-
         this._sets = [];
-        for (let i = 0; i < 10; i++) {
-            this._sets.push(
-                new Set(
-                    theme,
-                    null,
-                    `${i}${i}${i}${i}`,
-                    `Set ${i}`
-                )
-            );
-        }
+        Sets.forEach((item) => {
+            this._sets.push(new Set().deserialize(item))
+        });
     }
 }

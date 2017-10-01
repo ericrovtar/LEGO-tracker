@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Theme } from './theme';
 
+import { Themes } from '../../data/themes';
+
 @Injectable()
 export class ThemeService {
     private _themes: Array<Theme> = [];
@@ -17,11 +19,11 @@ export class ThemeService {
 
     constructor() {
         this._themes = [];
-        for (let i = 0; i < 10; i++) {
+        Themes.forEach((item, index) => {
             this._themes.push(
-                new Theme(`Theme ${i}`)
+                new Theme().deserialize(item)
             );
-        }
+        });
     }
 
     addFavorite(theme: Theme) {

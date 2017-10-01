@@ -2,6 +2,13 @@ import { Theme } from '../theme/theme';
 import { Upc } from '../upc/upc';
 
 export class Set {
+    static searchableFields: Array<string> = [
+        'number',
+        'name',
+        'upc'
+    ];
+    
+    id: number;
     theme: Theme;
     subtheme: Theme;
 
@@ -14,6 +21,7 @@ export class Set {
     msrp: number;
     pieces: number;
     availability: Array<any>;
+    photoUrls: Array<string>;
 
     // Rating
     // Purchase Date
@@ -25,16 +33,23 @@ export class Set {
     // Exclusivity
     // Photos
 
-    constructor(
-        theme: Theme, 
-        subtheme: Theme,
-        number: string,
-        name: string
-    ) {
-        this.theme = theme;
-        this.subtheme = subtheme;
-        this.number = number;
-        this.name = name;
+    constructor() {
     }
 
+    deserialize(object: any): Set {
+        this.theme = new Theme().deserialize(object.theme);
+        this.subtheme = new Theme().deserialize(object.subtheme);
+        this.number = object.number;
+        this.name = object.name;
+        this.description = object.description;
+        this.minifigs = object.minifigs;
+        this.releaseDate = object.releaseDate;
+        this.upc = object.upc;
+        this.msrp = object.msrp;
+        this.pieces = object.pieces;
+        this.availability = object.availability;
+        this.photoUrls = object.photoUrls;
+
+        return this;
+    }
 }
