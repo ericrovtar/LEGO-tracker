@@ -46,9 +46,27 @@ export class SearchPage {
 
     getItems($event: any) {
         this.initializeItems();
+        
+        if (this.searchQuery === '') {
+            return;
+        }
 
         this.items = this.setService.sets.filter(
-            (set) => set.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+            (set) => {
+                let include = false;
+                Set.searchableFields.forEach((field) => {
+                    if (set[field] !== null) {
+                        const value = set[field].toString();
+
+                        if (value.toLowerCase().includes(this.searchQuery.toLowerCase())) {
+                            include = true;
+                        }
+                    }
+                });
+
+                return include;
+                // set.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+            }
         );
     }
 
