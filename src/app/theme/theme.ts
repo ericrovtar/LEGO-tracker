@@ -1,8 +1,7 @@
+import { Item } from '../_shared/item/item';
 // import { Themes } from '../../data/themes';
 
-export class Theme {
-    id: number;
-
+export class Theme extends Item {
     name: string;
     startDate: Date;
     endDate: Date;
@@ -10,6 +9,7 @@ export class Theme {
     logoUrl: string;
 
     constructor() {
+        super();
     }
 
     deserialize(object: any): Theme {

@@ -1,14 +1,14 @@
+import { Item } from '../_shared/item/item';
 import { Theme } from '../theme/theme';
 import { Upc } from '../upc/upc';
 
-export class Set {
+export class Set extends Item {
     static searchableFields: Array<string> = [
         'number',
         'name',
         'upc'
     ];
     
-    id: number;
     theme: Theme;
     subtheme: Theme;
 
@@ -31,9 +31,9 @@ export class Set {
     // Missing Pieces
     // Box?
     // Exclusivity
-    // Photos
 
     constructor() {
+        super();
     }
 
     deserialize(object: any): Set {
